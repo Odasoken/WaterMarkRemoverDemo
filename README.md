@@ -1,5 +1,10 @@
 # WaterMarkRemoverDemo
 基于opencv的图像去水印iOSDemo<br>
+#步骤
+1、设置treshhold阀值<br>
+2、选择待修复图像的修复区域imageROI<br>
+3、图像膨胀和侵蚀处理<br>
+4、使用cv::INPAINT_NS算法进行图像修复<br>
  <img src="https://github.com/Odasoken/WaterMarkRemoverDemo/blob/main/demo1.png" width="50%" height="50%">
 
 ```objc
