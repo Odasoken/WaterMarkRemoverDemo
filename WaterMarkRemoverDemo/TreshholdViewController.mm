@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _imageTempArr = @[].mutableCopy;
-    self.image = [UIImage imageNamed:@"apper.png"];
+    self.image = [UIImage imageNamed:@"test1"];
     self.originImg = self.image;
     
     

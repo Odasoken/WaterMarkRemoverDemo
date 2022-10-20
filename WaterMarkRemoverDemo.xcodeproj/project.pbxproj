@@ -16,7 +16,6 @@
 		3A7B6B2529004BEC00E65251 /* WaterMarkRemoverDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B6B2429004BEC00E65251 /* WaterMarkRemoverDemoUITestsLaunchTests.m */; };
 		3A7B6B3429004C3E00E65251 /* TreshholdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7B6B3129004C3E00E65251 /* TreshholdViewController.xib */; };
 		3A7B6B3529004C3E00E65251 /* TreshholdViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B6B3229004C3E00E65251 /* TreshholdViewController.mm */; };
-		3A7B6B3729004C6900E65251 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7B6B3629004C6800E65251 /* opencv2.framework */; };
 		3A7B6B4129004C9900E65251 /* SKCropDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B6B3B29004C9800E65251 /* SKCropDrawerView.m */; };
 		3A7B6B4229004C9900E65251 /* SKCropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B6B3C29004C9800E65251 /* SKCropImageView.m */; };
 		3A7B6B4329004C9900E65251 /* SKCropCrornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B6B3D29004C9800E65251 /* SKCropCrornerView.m */; };
@@ -93,7 +92,6 @@
 		3A7B6B3129004C3E00E65251 /* TreshholdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TreshholdViewController.xib; sourceTree = "<group>"; };
 		3A7B6B3229004C3E00E65251 /* TreshholdViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TreshholdViewController.mm; sourceTree = "<group>"; };
 		3A7B6B3329004C3E00E65251 /* TreshholdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreshholdViewController.h; sourceTree = "<group>"; };
-		3A7B6B3629004C6800E65251 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		3A7B6B3929004C9800E65251 /* SKCropTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKCropTool.h; sourceTree = "<group>"; };
 		3A7B6B3A29004C9800E65251 /* SKCropCrornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKCropCrornerView.h; sourceTree = "<group>"; };
 		3A7B6B3B29004C9800E65251 /* SKCropDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKCropDrawerView.m; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7B6B3729004C6900E65251 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +231,6 @@
 				3A7B6B3229004C3E00E65251 /* TreshholdViewController.mm */,
 				3A7B6B3129004C3E00E65251 /* TreshholdViewController.xib */,
 				3A7B6B4529004D0B00E65251 /* Tool */,
-				3A7B6B3629004C6800E65251 /* opencv2.framework */,
 				3A7B6B0829004BEB00E65251 /* Assets.xcassets */,
 				3A7B6B0A29004BEB00E65251 /* LaunchScreen.storyboard */,
 				3A7B6B0D29004BEB00E65251 /* Info.plist */,
