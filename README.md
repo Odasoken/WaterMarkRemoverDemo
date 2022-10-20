@@ -1,6 +1,6 @@
 # WaterMarkRemoverDemo
 基于opencv的图像去水印iOSDemo<br>
-#步骤
+# 步骤
 1、设置treshhold阀值<br>
 2、选择待修复图像的修复区域imageROI<br>
 3、图像膨胀和侵蚀处理<br>
