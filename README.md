@@ -1,5 +1,7 @@
 # WaterMarkRemoverDemo
 基于opencv的图像去水印iOSDemo<br>
+ <img src="https://github.com/Odasoken/WaterMarkRemoverDemo/blob/main/demo1.png" width="50%" height="50%">
+
 ```objc
 -(IBAction)filterImage
 {
