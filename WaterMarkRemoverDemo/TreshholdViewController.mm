@@ -194,27 +194,7 @@
     
     cv::Mat rgbImg;
     cv::cvtColor(orignImg, rgbImg, cv::COLOR_BGRA2BGR);
-    //
-//    cv::Mat greyImg;
-//    cv::cvtColor(orignImg, greyImg, cv::COLOR_BGRA2GRAY);
-//    CGFloat width = CGImageGetWidth(img.CGImage);
-//    cv::Scalar scalr = cv::Scalar(0,0,0,0);
-//    cv::Size size = cv::Size(img.size.width,img.size.height);
-//    cv::Mat imgMask =
-//    cv::Mat(img.size.width, img.size.height, CV_8UC1, &scalr);
-//
-//
-//
-//    cv::Mat threshImg;
-//    cv::threshold(greyImg, threshImg,67, 255,  cv::THRESH_BINARY);
-//    cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3,3));
-//
-//
-//
-//    cv::dilate(threshImg, threshImg, kernel);
-//    cv::Mat destImg;
-//    cv::inpaint(rgbImg, threshImg, destImg, 10, cv::INPAINT_NS);
-//
+    
     
     NSArray *pts =   _drawerView.cropPointArray;
     CGPoint startPt  = [pts.firstObject CGPointValue];
@@ -245,26 +225,6 @@
         cv::bitwise_not(clipthreshImg, clipthreshImg);
     }
    
-//    cv::Mat image(100 , 100 , CV_8UC3);
-//    int rows = image.rows;
-//    int cols = image.cols;
-//
-//    for (int i=0; i<rows ; i++)
-//    {
-//        for (int j=0; j<cols ; j++)
-//        {
-//            if ( image.at<cv::Vec3b>(i,j)[2] > 190) {
-//                image.at<cv::Vec3b>(i,j)[0]= 20;  // B 通道
-//                image.at<cv::Vec3b>(i,j)[1]= 20;
-//            }else
-//            {
-//                image.at<cv::Vec3b>(i,j)[0]= 0;  // B 通道
-//                image.at<cv::Vec3b>(i,j)[1]= 0;//G
-//                image.at<cv::Vec3b>(i,j)[2]= 0;   // R 通道
-//            }
-//
-//        }
-//    }
     
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3,3));
     cv::dilate(clipthreshImg, clipthreshImg, kernel);
@@ -272,8 +232,7 @@
     cv::Mat destImg;
     cv::inpaint(clipMask, clipthreshImg, destImg, 10, cv::INPAINT_NS);
     
-//    rgbImg(clipRect) = destImg;
-//   cv::bitwise_and(<#InputArray src1#>, <#InputArray src2#>, <#OutputArray dst#>)
+
    
 
     
@@ -282,42 +241,7 @@
     destImg.copyTo(clipMask);
     UIImage *clip_Image = MatToUIImage(rgbImg);
     self.imageView2.image = clip_Image;
-    return;
-    
-//    UIImage *mask_Image = MatToUIImage(threshImg);
-//    self.imageView2.image = mask_Image;
-//
-//    UIImage *tresh_Image = MatToUIImage(destImg);
-//    self.imageView.image = tresh_Image;
-//    cv::Mat resizeImg2;
-//    cv::resize(destImg, resizeImg2, cv::Size(img.size.width,img.size.height));
-//
-//
-////    cv::Mat destImg2;
-////    cv::addWeighted(resizeImg2, 1.0, rgbImg, 1.0, 3, destImg2);
-//    UIImage *clip_Image2 = MatToUIImage(resizeImg2);
-//    self.imageView2.image = clip_Image2;
-//
-//
-//
-//    return;
-    // 1.创建一个基于位图的上下文(开启一个基于位图的上下文)
-        UIGraphicsBeginImageContextWithOptions(img.size, NO, 0.0);
-
-        // 2.画背景
-        [img drawInRect:CGRectMake(0, 0, img.size.width, img.size.height)];
-
-        // 3.画右下角的水印
-        UIImage *waterImage = clip_Image;
-
-        [waterImage drawInRect:CGRectMake(x1, y1, clipW, clipH)];
-
-        // 4.从上下文中取得制作完毕的UIImage对象
-        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-
-        // 5.结束上下文
-        UIGraphicsEndImageContext();
-        self.imageView2.image = newImage;
+ 
     
 }
 -(IBAction)filterImage2
