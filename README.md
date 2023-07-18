@@ -70,7 +70,7 @@
 
     
     
-    
+    ///显示修复后的图片
     destImg.copyTo(clipMask);
     UIImage *clip_Image = MatToUIImage(rgbImg);
     self.imageView2.image = clip_Image;
