@@ -29,7 +29,7 @@
     CGFloat xRate = img.size.width  / _imageView.frame.size.width ;
     CGFloat yRate =  img.size.height  / _imageView.frame.size.height;
     
-    
+    //计算待修复矩形区域（水印在图片中的位置）
     CGFloat x1 = startPt.x * xRate;
     CGFloat y1 = startPt.y * yRate;
     
@@ -41,22 +41,28 @@
     cv::Rect clipRect = cv::Rect(x1, y1, clipW, clipH);
   
     cv::Mat clipMask = rgbImg(clipRect);
+    //设置待修复矩形区域（水印区域）
     cv::Mat imageROI(rgbImg,clipRect);
-    
+
+    //灰度图
     cv::Mat greyImg;
     cv::cvtColor(clipMask, greyImg, cv::COLOR_BGRA2GRAY);
     cv::Mat clipthreshImg;
+    //  二值化处理
     cv::threshold(greyImg, clipthreshImg,self.treshValue, 255,  cv::THRESH_BINARY);
+
+
     if (self.swtContrl.isOn) {
         
         cv::bitwise_not(clipthreshImg, clipthreshImg);
     }
    
-    
+    //侵蚀处理
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3,3));
     cv::dilate(clipthreshImg, clipthreshImg, kernel);
     
     cv::Mat destImg;
+    //图像修复
     cv::inpaint(clipMask, clipthreshImg, destImg, 10, cv::INPAINT_NS);
     
 
